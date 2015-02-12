@@ -1,0 +1,19 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+if [ -f ~/.bash_aliases ]; then
+. ~/.bash_aliases
+fi
+if [ -f ~/.bash_exports ]; then
+. ~/.bash_exports
+fi
+bind -r '\C-s'
+stty -ixon
