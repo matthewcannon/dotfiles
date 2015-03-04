@@ -24,9 +24,11 @@ set mouse=a
 set autoindent
 set si
 set history=1000
-set noexpandtab
+set expandtab
 set shiftwidth=4
-set tabstop=2
+set tabstop=4
+set softtabstop=4
+set smarttab
 set ignorecase
 set smartcase
 set incsearch
