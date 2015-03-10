@@ -1,24 +1,24 @@
 set nocompatible | filetype indent plugin on | syn on
 fun! SetupVAM()
-		let c = get(g:, 'vim_addon_manager', {})
-		let g:vim_addon_manager = c
-		let c.plugin_root_dir = expand('$HOME', 1) . '/.vim/vim-addons'
-		let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
-		if !isdirectory(c.plugin_root_dir.'/vim-addon-manager/autoload')
-				execute '!git clone --depth=1 https://github.com/MarcWeber/vim-addon-manager '
-										\       shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
-		endif
-		call vam#ActivateAddons([], {'auto_install' : 0})
-		call vam#ActivateAddons(['powerline'])
+    let c = get(g:, 'vim_addon_manager', {})
+    let g:vim_addon_manager = c
+    let c.plugin_root_dir = expand('$HOME', 1) . '/.vim/vim-addons'
+    let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
+    if !isdirectory(c.plugin_root_dir.'/vim-addon-manager/autoload')
+        execute '!git clone --depth=1 https://github.com/MarcWeber/vim-addon-manager '
+                    \       shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
+    endif
+    call vam#ActivateAddons([], {'auto_install' : 0})
+    call vam#ActivateAddons(['powerline'])
 endfun
 let g:vim_addon_manager = {'scms': {'git': {}}}
 fun! MyGitCheckout(repository, targetDir)
-		let a:repository.url = substitute(a:repository.url, '^git://github', 'http://github', '')
-		return vam#utils#RunShell('git clone --depth=1 $.url $p', a:repository, a:targetDir)
+    let a:repository.url = substitute(a:repository.url, '^git://github', 'http://github', '')
+    return vam#utils#RunShell('git clone --depth=1 $.url $p', a:repository, a:targetDir)
 endfun
 let g:vim_addon_manager.scms.git.clone=['MyGitCheckout']
 call SetupVAM()
-VAMActivate The_NERD_tree jellybeans vim-autoformat Tagbar fugitive github:kristijanhusak/vim-multiple-cursors github:scrooloose/syntastic github:kien/ctrlp.vim
+VAMActivate The_NERD_tree jellybeans vim-autoformat Tagbar fugitive github:kristijanhusak/vim-multiple-cursors github:scrooloose/syntastic github:kien/ctrlp.vim github:tpope/vim-commentary
 set number
 set mouse=a
 set autoindent
