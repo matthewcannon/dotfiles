@@ -44,13 +44,13 @@ set wildmode=longest,list
 set lazyredraw
 colorscheme jellybeans
 let g:partialWord= "none"
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
-noremap <C-C> :q!<cr>
-nmap <silent> <C-D> :NERDTreeToggle<CR>
-nmap <silent> <C-E> :TagbarToggle<CR>
-nmap <c-s> :Autoformat<cr> :update<cr>
-imap <c-s> <esc> :Autoformat<cr> :update<cr>a  
+nnoremap <silent> [b :bprevious<cr>
+nnoremap <silent> ]b :bnext<cr>
+noremap <c-c> :q!<cr>
+nmap <silent> <c-d> :NERDTreeToggle<cr>
+nmap <silent> <c-e> :TagbarToggle<cr>
+nmap <c-s> :Autoformat<cr>:update<cr>
+imap <c-s> <esc> :Autoformat<cr>:update<cr>a  
 let g:NERDTreeDirArrows=0
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
