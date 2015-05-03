@@ -1,24 +1,43 @@
-set nocompatible | filetype indent plugin on | syn on
-fun! SetupVAM()
-    let c = get(g:, 'vim_addon_manager', {})
-    let g:vim_addon_manager = c
-    let c.plugin_root_dir = expand('$HOME', 1) . '/.vim/vim-addons'
-    let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
-    if !isdirectory(c.plugin_root_dir.'/vim-addon-manager/autoload')
-        execute '!git clone --depth=1 https://github.com/MarcWeber/vim-addon-manager '
-                    \       shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
-    endif
-    call vam#ActivateAddons([], {'auto_install' : 0})
-    call vam#ActivateAddons(['powerline'])
-endfun
-let g:vim_addon_manager = {'scms': {'git': {}}}
-fun! MyGitCheckout(repository, targetDir)
-    let a:repository.url = substitute(a:repository.url, '^git://github', 'http://github', '')
-    return vam#utils#RunShell('git clone --depth=1 $.url $p', a:repository, a:targetDir)
-endfun
-let g:vim_addon_manager.scms.git.clone=['MyGitCheckout']
-call SetupVAM()
-VAMActivate The_NERD_tree jellybeans vim-autoformat Tagbar fugitive github:kristijanhusak/vim-multiple-cursors github:scrooloose/syntastic github:kien/ctrlp.vim github:tpope/vim-commentary
+set nocompatible
+filetype off
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+Plugin 'L9'
+" Git plugin not hosted on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Avoid a name conflict with L9
+Plugin 'user/L9', {'name': 'newL9'}
+" All of your Plugins must be added before the following line
+call vundle#end()
+filetype plugin indent on
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"powerline
+"The_NERD_tree
+"jellybeans
+"vim-autoformat
+"Tagbar
+"fugitive
+"github:kristijanhusak/vim-multiple-cursors
+"github:scrooloose/syntastic
+"github:kien/ctrlp.vim
+"github:tpope/vim-commentary
+set syn on
 set number
 set mouse=a
 set autoindent
@@ -49,8 +68,8 @@ nnoremap <silent> ]b :bnext<cr>
 noremap <c-c> :q!<cr>
 nmap <silent> <c-d> :NERDTreeToggle<cr>
 nmap <silent> <c-e> :TagbarToggle<cr>
-nmap <c-s> :Autoformat<cr>:update<cr>
-imap <c-s> <esc> :Autoformat<cr>:update<cr>a  
+"nmap <c-s> :Autoformat<cr>:update<cr>
+"imap <c-s> <esc> :Autoformat<cr>:update<cr>a  
 let g:NERDTreeDirArrows=0
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'

@@ -15,5 +15,3 @@ fi
 if [ -f ~/.bash_exports ]; then
 . ~/.bash_exports
 fi
-bind -r '\C-s'
-stty -ixon
