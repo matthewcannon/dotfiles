@@ -37,7 +37,7 @@ filetype plugin indent on
 "github:scrooloose/syntastic
 "github:kien/ctrlp.vim
 "github:tpope/vim-commentary
-set syn on
+syn on
 set number
 set mouse=a
 set autoindent
