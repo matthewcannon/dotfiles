@@ -1,1 +1,1 @@
-# dotfiles-public
+# dotfiles
