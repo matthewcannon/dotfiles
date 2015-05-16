@@ -18,6 +18,7 @@ Plugin 'ervandew/supertab'
 call vundle#end()
 filetype plugin indent on
 au BufRead,BufNewFile *.hbs setfiletype html
+au BufRead,BufNewFile *.scss setfiletype scss.css 
 set omnifunc=syntaxcomplete#Complete
 syn on
 set number
@@ -59,3 +60,4 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_extensions = ['tag', 'buffertag']
+let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
