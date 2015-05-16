@@ -17,6 +17,7 @@ Plugin 'othree/html5.vim'
 Plugin 'ervandew/supertab'
 call vundle#end()
 filetype plugin indent on
+au BufRead,BufNewFile *.hbs setfiletype html
 set omnifunc=syntaxcomplete#Complete
 syn on
 set number
