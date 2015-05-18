@@ -14,6 +14,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'othree/html5.vim'
+Plugin 'hail2u/vim-css3-syntax'
 Plugin 'ervandew/supertab'
 call vundle#end()
 filetype plugin indent on
