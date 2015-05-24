@@ -50,6 +50,7 @@ colorscheme jellybeans
 let g:partialWord= "none"
 nnoremap <silent> [b :bprevious<cr>
 nnoremap <silent> ]b :bnext<cr>
+nnoremap <c-x> :bd<return>
 noremap <c-c> :q!<cr>
 nmap <silent> <c-d> :NERDTreeToggle<cr>
 nmap <silent> <c-e> :TagbarToggle<cr>
