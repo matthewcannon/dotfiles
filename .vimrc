@@ -54,8 +54,8 @@ nnoremap <c-x> :bd<return>
 noremap <c-c> :q!<cr>
 nmap <silent> <c-d> :NERDTreeToggle<cr>
 nmap <silent> <c-e> :TagbarToggle<cr>
-nmap <c-u> :Autoformat<cr>:update<cr>
-imap <c-u> <esc> :Autoformat<cr>:update<cr>a  
+nmap <c-u>:update<cr>
+imap <c-u>:update<cr>a  
 let g:NERDTreeDirArrows=0
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
