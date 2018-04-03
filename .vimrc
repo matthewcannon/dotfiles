@@ -16,10 +16,12 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'othree/html5.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'ervandew/supertab'
+Plugin 'fatih/vim-go'
+Plugin 'dyng/ctrlsf.vim'
 call vundle#end()
 filetype plugin indent on
 au BufRead,BufNewFile *.hbs setfiletype html
-au BufRead,BufNewFile *.scss setfiletype scss.css 
+au BufRead,BufNewFile *.scss setfiletype scss.css
 set omnifunc=syntaxcomplete#Complete
 syn on
 set number
@@ -54,8 +56,13 @@ nnoremap <c-x> :bd<return>
 noremap <c-c> :q!<cr>
 nmap <silent> <c-d> :NERDTreeToggle<cr>
 nmap <silent> <c-e> :TagbarToggle<cr>
-nmap <c-u>:update<cr>
-imap <c-u>:update<cr>a  
+" Run all Go tests immediately after writing the file.
+" nmap <c-u> :update<cr>:GoTest<cr>
+" imap <c-u> :update<cr>:GoTest<cr>a
+nmap <c-u> :Autoformat<cr> :w!<cr>
+imap <c-u> :Autoformat<cr> :w!<cr>a
+nmap <silent> <c-l> :CtrlSF<cr>
+let g:go_test_timeout='5s'
 let g:NERDTreeDirArrows=0
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
@@ -63,3 +70,5 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_extensions = ['tag', 'buffertag']
 let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
+nnoremap <c-f> :CtrlSF<cr>
+inoremap <c-f> :CtrlSF<cr>
