@@ -17,6 +17,7 @@ Plugin 'othree/html5.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
+let g:go_version_warning = 0
 Plugin 'dyng/ctrlsf.vim'
 call vundle#end()
 filetype plugin indent on
