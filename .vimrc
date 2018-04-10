@@ -17,6 +17,7 @@ Plugin 'othree/html5.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
+Plugin 'prettier/vim-prettier'
 let g:go_version_warning = 0
 Plugin 'dyng/ctrlsf.vim'
 call vundle#end()
@@ -60,8 +61,8 @@ nmap <silent> <c-e> :TagbarToggle<cr>
 " Run all Go tests immediately after writing the file.
 " nmap <c-u> :update<cr>:GoTest<cr>
 " imap <c-u> :update<cr>:GoTest<cr>a
-nmap <c-u> :Autoformat<cr> :w!<cr>
-imap <c-u> :Autoformat<cr> :w!<cr>a
+nmap <c-u> :Prettier<cr> :w!<cr>
+imap <c-u> :Prettier<cr> :w!<cr>a
 nmap <silent> <c-l> :CtrlSF<cr>
 let g:go_test_timeout='5s'
 let g:NERDTreeDirArrows=0
