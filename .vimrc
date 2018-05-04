@@ -1,4 +1,5 @@
 set nocompatible
+set cursorline
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -19,7 +20,8 @@ Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
 Plugin 'prettier/vim-prettier'
 let g:go_version_warning = 0
-Plugin 'dyng/ctrlsf.vim'
+" Plugin 'dyng/ctrlsf.vim'
+Plugin 'mileszs/ack.vim'
 call vundle#end()
 filetype plugin indent on
 au BufRead,BufNewFile *.hbs setfiletype html
@@ -63,7 +65,7 @@ nmap <silent> <c-e> :TagbarToggle<cr>
 " imap <c-u> :update<cr>:GoTest<cr>a
 nmap <c-u> :Prettier<cr> :w!<cr>
 imap <c-u> :Prettier<cr> :w!<cr>a
-nmap <silent> <c-l> :CtrlSF<cr>
+nmap <silent> <c-l> :Ack!<cr>
 let g:go_test_timeout='5s'
 let g:NERDTreeDirArrows=0
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
@@ -72,5 +74,3 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_extensions = ['tag', 'buffertag']
 let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
-nnoremap <c-f> :CtrlSF<cr>
-inoremap <c-f> :CtrlSF<cr>
