@@ -68,6 +68,7 @@ imap <c-u> :Prettier<cr> :w!<cr>a
 nmap <silent> <c-l> :Ack!<cr>
 let g:go_test_timeout='5s'
 let g:NERDTreeDirArrows=0
+let g:NERDTreeShowHidden=1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_map = '<c-p>'
