@@ -19,8 +19,6 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
 Plugin 'prettier/vim-prettier'
-let g:go_version_warning = 0
-" Plugin 'dyng/ctrlsf.vim'
 Plugin 'mileszs/ack.vim'
 call vundle#end()
 filetype plugin indent on
@@ -56,11 +54,11 @@ colorscheme jellybeans
 let g:partialWord= "none"
 nnoremap <silent> [b :bprevious<cr>
 nnoremap <silent> ]b :bnext<cr>
-nnoremap <c-x> :bd<return>
+nnoremap <c-x> :BOnly<return>
 noremap <c-c> :q!<cr>
 nmap <silent> <c-d> :NERDTreeToggle<cr>
 nmap <silent> <c-e> :TagbarToggle<cr>
-" Run all Go tests immediately after writing the file.
+let g:go_version_warning = 0
 " nmap <c-u> :update<cr>:GoTest<cr>
 " imap <c-u> :update<cr>:GoTest<cr>a
 nmap <c-u> :Prettier<cr> :w!<cr>
