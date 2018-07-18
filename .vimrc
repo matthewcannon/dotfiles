@@ -21,6 +21,7 @@ Plugin 'fatih/vim-go'
 Plugin 'prettier/vim-prettier'
 Plugin 'mileszs/ack.vim'
 call vundle#end()
+let g:ack_autoclose = 1
 filetype plugin indent on
 au BufRead,BufNewFile *.hbs setfiletype html
 au BufRead,BufNewFile *.scss setfiletype scss.css
@@ -57,10 +58,11 @@ nnoremap <silent> ]b :bnext<cr>
 nnoremap <c-x> :BOnly<return>
 noremap <c-c> :q!<cr>
 nmap <silent> <c-d> :NERDTreeToggle<cr>
+nmap <silent> <c-h> :NERDTreeFind<cr>
 nmap <silent> <c-e> :TagbarToggle<cr>
 let g:go_version_warning = 0
 " nmap <c-u> :update<cr>:GoTest<cr>
-" imap <c-u> :update<cr>:GoTest<cr>a
+" imap <c-u> :update<cr>:GoTest<cr>autoformat
 nmap <c-u> :Prettier<cr> :w!<cr>
 imap <c-u> :Prettier<cr> :w!<cr>a
 nmap <silent> <c-l> :Ack!<cr>
