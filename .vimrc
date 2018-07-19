@@ -20,6 +20,7 @@ Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
 Plugin 'prettier/vim-prettier'
 Plugin 'mileszs/ack.vim'
+Plugin 'airblade/vim-gitgutter'
 call vundle#end()
 let g:ack_autoclose = 1
 filetype plugin indent on
