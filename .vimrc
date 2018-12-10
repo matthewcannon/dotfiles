@@ -21,8 +21,11 @@ Plugin 'fatih/vim-go'
 Plugin 'prettier/vim-prettier'
 Plugin 'mileszs/ack.vim'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'janko-m/vim-test'
+Plugin 'neomake/neomake'
 call vundle#end()
 let g:ack_autoclose = 1
+let g:test#javascript#jest#options = '--reporters jest-vim-reporter'
 filetype plugin indent on
 au BufRead,BufNewFile *.hbs setfiletype html
 au BufRead,BufNewFile *.scss setfiletype scss.css
@@ -67,6 +70,11 @@ let g:go_version_warning = 0
 nmap <c-u> :Prettier<cr> :w!<cr>
 imap <c-u> :Prettier<cr> :w!<cr>a
 nmap <silent> <c-l> :Ack!<cr>
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
 let g:go_test_timeout='5s'
 let g:NERDTreeDirArrows=0
 let g:NERDTreeShowHidden=1
