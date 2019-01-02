@@ -75,6 +75,9 @@ nmap <silent> t<C-f> :TestFile<CR>
 nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
+nmap <silent> g<C-s> :Gstatus<CR>
+nmap <silent> g<C-d> :Gvdiff<CR>
+nmap <silent> g<C-b> :Gblame<CR>
 let g:go_test_timeout='5s'
 let g:NERDTreeDirArrows=0
 let g:NERDTreeShowHidden=1
