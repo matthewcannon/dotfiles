@@ -23,9 +23,15 @@ Plugin 'mileszs/ack.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'janko-m/vim-test'
 Plugin 'neomake/neomake'
+Plugin 'ruanyl/coverage.vim'
 call vundle#end()
 let g:ack_autoclose = 1
 let g:test#javascript#jest#options = '--reporters jest-vim-reporter'
+let g:coverage_json_report_path = 'coverage/coverage-final.json'
+let g:coverage_sign_covered = '⦿'
+let g:coverage_interval = 5000
+let g:coverage_show_covered = 1
+let g:coverage_show_uncovered = 1
 filetype plugin indent on
 au BufRead,BufNewFile *.hbs setfiletype html
 au BufRead,BufNewFile *.scss setfiletype scss.css
