@@ -6,7 +6,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'powerline/powerline'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kristijanhusak/vim-multiple-cursors'
@@ -19,19 +18,19 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
 Plugin 'prettier/vim-prettier'
-Plugin 'mileszs/ack.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'janko-m/vim-test'
 Plugin 'neomake/neomake'
 Plugin 'ruanyl/coverage.vim'
+Plugin 'gabesoft/vim-ags'
+Plugin 'itchyny/lightline.vim'
 call vundle#end()
-let g:ack_autoclose = 1
 let g:test#javascript#jest#options = '--reporters jest-vim-reporter'
 let g:coverage_json_report_path = 'coverage/coverage-final.json'
 let g:coverage_sign_covered = '⦿'
 let g:coverage_interval = 5000
 let g:coverage_show_covered = 1
-let g:coverage_show_uncovered = 1
+let g:coverage_show_uncovered = 0
 filetype plugin indent on
 au BufRead,BufNewFile *.hbs setfiletype html
 au BufRead,BufNewFile *.scss setfiletype scss.css
@@ -75,7 +74,7 @@ let g:go_version_warning = 0
 " imap <c-u> :update<cr>:GoTest<cr>autoformat
 nmap <c-u> :Prettier<cr> :w!<cr>
 imap <c-u> :Prettier<cr> :w!<cr>a
-nmap <silent> <c-l> :Ack!<cr>
+nmap <silent> <c-l> :Ags<cr>
 nmap <silent> t<C-n> :TestNearest<CR>
 nmap <silent> t<C-f> :TestFile<CR>
 nmap <silent> t<C-s> :TestSuite<CR>
