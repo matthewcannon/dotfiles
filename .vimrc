@@ -27,10 +27,7 @@ Plugin 'itchyny/lightline.vim'
 call vundle#end()
 let g:test#javascript#jest#options = '--reporters jest-vim-reporter'
 let g:coverage_json_report_path = 'coverage/coverage-final.json'
-let g:coverage_sign_covered = '⦿'
 let g:coverage_interval = 5000
-let g:coverage_show_covered = 1
-let g:coverage_show_uncovered = 0
 filetype plugin indent on
 au BufRead,BufNewFile *.hbs setfiletype html
 au BufRead,BufNewFile *.scss setfiletype scss.css
@@ -83,6 +80,8 @@ nmap <silent> t<C-g> :TestVisit<CR>
 nmap <silent> g<C-s> :Gstatus<CR>
 nmap <silent> g<C-d> :Gvdiff<CR>
 nmap <silent> g<C-b> :Gblame<CR>
+nmap <silent> g<C-c> :Gcommit<CR>
+nmap <silent> g<C-p> :Gpush<CR>
 let g:go_test_timeout='5s'
 let g:NERDTreeDirArrows=0
 let g:NERDTreeShowHidden=1
